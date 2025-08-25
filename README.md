@@ -1,7 +1,15 @@
-<!--
-  Hi, 这是 luyii-code-1 的 GitHub Profile README
+Hi, 这是 luyii-code-1 的 GitHub Profile README
   花里胡哨但不影响阅读：适度留白、模块分块、移动端友好。
   想精简：删掉任意模块即可；想更骚：把注释里提示的可选项打开。
+
+
+
+
+
+
+
+
+
 -->
 
 <!-- 顶部打招呼 & 徽章区 -->
@@ -41,35 +49,6 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="36" alt="Node.js"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="36" alt="Python"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" height="36" alt="Docker"/>
-  ### 我用过/钟爱的超级多工具 
-
-<p>
-  <!-- 云平台 -->
-  ![AWS](https://img.shields.io/badge/AWS-%23FF9900?logo=amazon-web-services&logoColor=white)
-  ![Google Cloud](https://img.shields.io/badge/Google%20Cloud-%234285F4?logo=google-cloud&logoColor=white)
-  ![Alibaba Cloud](https://img.shields.io/badge/AlibabaCloud-%23FF6701?logo=alibabacloud&logoColor=white)
-
-  <!-- 开发工具 -->
-  ![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)
-  ![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?logo=visual-studio-code&logoColor=white)
-  ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
-
-  <!-- 编程语言 -->
-  ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
-  ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
-  ![Go](https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=white)
-
-  <!-- 区块链 / 加密货币 -->
-  ![Bitcoin](https://img.shields.io/badge/Bitcoin-FF9900?logo=bitcoin&logoColor=white)
-  ![Ethereum](https://img.shields.io/badge/Ethereum-3C3C3D?logo=ethereum&logoColor=white)
-  ![Solana](https://img.shields.io/badge/Solana-9945FF?logo=solana&logoColor=white)
-
-  <!-- 游戏 & 引擎 -->
-  ![Godot Engine](https://img.shields.io/badge/Godot Engine-%23FFFFFF?logo=godot-engine&logoColor=black)
-  ![Unreal Engine](https://img.shields.io/badge/Unreal%20Engine-%23313131?logo=unrealengine&logoColor=white)
-  ![Steam](https://img.shields.io/badge/Steam-%23000000?logo=steam&logoColor=white)
-</p>
-
   <!-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="36" alt="VS Code"/> -->
 </p>
 
