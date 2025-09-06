@@ -6,7 +6,7 @@
   <a href="https://komarev.com/ghpvc/?username=luyii-code-1&style=flat-square"><img alt="Visitor Badge" src="https://komarev.com/ghpvc/?username=luyii-code-1&style=flat-square"/></a>
   <a href="https://github.com/luyii-code-1?tab=followers"><img alt="GitHub followers" src="https://img.shields.io/github/followers/luyii-code-1?style=flat-square"/></a>
   <a href="https://github.com/luyii-code-1"><img alt="GitHub stars" src="https://img.shields.io/github/stars/luyii-code-1?style=flat-square"/></a>
-  <a href="mailto:hi@invalid.example"><img alt="Email" src="https://img.shields.io/badge/Email-hi%40invalid.example-blue?style=flat-square"/></a>
+  <a href="mailto:hi@invalid.example">
 
   <!-- ② 可选 Typing SVG 动画：注释掉即隐藏 -->
   <!-- <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1200&center=true&vCenter=true&width=700&lines=Markdown+Engineer+%F0%9F%93%9D+-+Code+少+%7C+Bio+花;Open-source+Enthusiast;Docs%2C+CI%2FCD%2C+Icons%2C+Automation" alt="Typing SVG"/> -->
