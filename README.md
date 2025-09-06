@@ -1,118 +1,158 @@
-Hi, 这是 luyii-code-1 的 GitHub Profile README
-  花里胡哨但不影响阅读：适度留白、模块分块、移动端友好。
-  想精简：删掉任意模块即可；想更骚：把注释里提示的可选项打开。
-
-
-
-
-
-
-
-
-
--->
-
-<!-- 顶部打招呼 & 徽章区 -->
+<!-- ────────────────────── HEADER ────────────────────── -->
 <div align="center">
   <h1>Hi, I'm <code>luyii-code-1</code> 👋</h1>
-  <p>
-    <img alt="Visitor Badge" src="https://komarev.com/ghpvc/?username=luyii-code-1&style=flat-square">
-    <a href="https://github.com/luyii-code-1?tab=followers"><img alt="GitHub followers" src="https://img.shields.io/github/followers/luyii-code-1?style=flat-square"></a>
-    <img alt="Profile Stars" src="https://img.shields.io/github/stars/luyii-code-1?affiliations=OWNER&style=flat-square">
-    <!-- 常见平台链接：需要就改成你的实际链接 -->
-    <a href="mailto:hi@invalid.example"><img alt="Email" src="https://img.shields.io/badge/Email-hi%40invalid.example-blue?style=flat-square"></a>
-    <!-- <a href="https://luyii.example.com"><img alt="Website" src="https://img.shields.io/badge/🌐_Website-online-brightgreen?style=flat-square"></a> -->
-  </p>
-  <!-- 打字机动画（可选，若不显示可注释） -->
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1200&center=true&vCenter=true&width=700&lines=Markdown+Engineer+%F0%9F%93%9D+-+Code+少+%7C+Bio+花;Open-source+Enthusiast;Docs%2C+CI%2FCD%2C+Icons%2C+Automation" alt="Typing SVG" />
+
+  <!-- ① 徽章行（可自行删减） -->
+  <a href="https://komarev.com/ghpvc/?username=luyii-code-1&style=flat-square"><img alt="Visitor Badge" src="https://komarev.com/ghpvc/?username=luyii-code-1&style=flat-square"/></a>
+  <a href="https://github.com/luyii-code-1?tab=followers"><img alt="GitHub followers" src="https://img.shields.io/github/followers/luyii-code-1?style=flat-square"/></a>
+  <a href="https://github.com/luyii-code-1"><img alt="GitHub stars" src="https://img.shields.io/github/stars/luyii-code-1?style=flat-square"/></a>
+  <a href="mailto:hi@invalid.example"><img alt="Email" src="https://img.shields.io/badge/Email-hi%40invalid.example-blue?style=flat-square"/></a>
+
+  <!-- ② 可选 Typing SVG 动画：注释掉即隐藏 -->
+  <!-- <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1200&center=true&vCenter=true&width=700&lines=Markdown+Engineer+%F0%9F%93%9D+-+Code+少+%7C+Bio+花;Open-source+Enthusiast;Docs%2C+CI%2FCD%2C+Icons%2C+Automation" alt="Typing SVG"/> -->
 </div>
 
----
 
-## 🧭 About Me
-- 🔭 偶尔写点代码，主要**修文档、撸徽章、摆卡片**。
-- 🧰 喜欢把 Markdown 变成网站、PDF、看板。
-- ⚙️ 常用：Git · GitHub Actions · MkDocs/Docusaurus · Pandoc。
-- 🌱 最近在练：SVG 图标清洗、README 体验优化。
-
----
-
+<!-- ────────────────────── SKILLS ────────────────────── -->
+<!-- ────────────────────── SKILLS ────────────────────── -->
+<!-- ────────────────────── SKILLS ────────────────────── -->
 ## 🧩 Tech Stack
-<!-- Devicon 图标：按需增删，完整列表见 https://devicon.dev/ -->
-<p>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg" height="36" alt="Markdown"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="36" alt="Git"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" height="36" alt="GitHub"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="36" alt="HTML5"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="36" alt="CSS3"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="36" alt="JavaScript"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="36" alt="Node.js"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="36" alt="Python"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" height="36" alt="Docker"/>
-  <!-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="36" alt="VS Code"/> -->
+<p align="center">
+  <!-- 1️⃣ 文档 / 版本 -->
+  <img src="https://img.shields.io/badge/Markdown-8A2BE2?style=for-the-badge&logo=markdown&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Git-181717?style=for-the-badge&logo=git&logoColor=white"/>
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+
+  <!-- 2️⃣ 前端基础 -->
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
+
+  <!-- 3️⃣ JS 框架 / 库 -->
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Vue.js-42b883?style=for‑the-badge&logo=vue.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Angular-DD3B4C?style=for-the-badge&logo=angular&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Svelte-FF3E00?style=for-the-badge&logo=svelte&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Nuxt.js-00C58E?style=for-the-badge&logo=nuxt.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/React‑Native-61DBFB?style=for-the-badge&logo=react-natives&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Expo-000000?style=for-the-badge&logo=expo&logoColor=white"/>
+
+  <!-- 4️⃣ 后端 / 语言 -->
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white"/>
+  <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Ruby-E8194A?style=for-the-badge&logo=ruby&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white"/>
+  <img src="https://img.shields.io/badge/.NET-512bd4?style=for-the-badge&logo=dotnet&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Scala-DC77AB?style=for-the-badge&logo=scala&logoColor=white"/>
+
+  <!-- 5️⃣ 数据科学 / AI -->
+  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
+  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Scikit‑Learn-FA5858?style=for-the-badge&logo=scikit-learn&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Keras-DF1A41?style=for-the-badge&logo=keras&logoColor=white"/>
+
+  <!-- 6️⃣ 数据库 -->
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white"/>
+  <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white"/>
+  <img src="https://img.shields.io/badge/DynamoDB-4285F4?style=for-the-badge&logo=amazon-dynamodb&logoColor=white"/>
+
+  <!-- 7️⃣ 容器 / 云原生 -->
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Helm-323330?style=for-the-badge&logo=helm&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Ansible-FF0000?style=for-the-badge&logo=ansible&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Mesosphere-Mesos?style=for-the-badge&logo=mesos&logoColor=white"/>
+
+  <!-- 8️⃣ 云平台 -->
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white"/>
+  <img src="https://img.shields.io/badge/GCP-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Azure-0089D6?style=for-the-badge&logo=azure&logoColor=white"/>
+  <img src="https://img.shields.io/badge/AWS‑Lambda-232F3E?style=for-the-badge&logo=aws&logoColor=white"/>
+  <img src="https://img.shields.io/badge/GCP‑Cloud Functions-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Azure‑Functions-0089D6?style=for-the-badge&logo=azure&logoColor=white"/>
+
+  <!-- 9️⃣ DevOps / CI / Testing -->
+  <img src="https://img.shields.io/badge/GitLab‑CI-FC6D24?style=for-the-badge&logo=gitlab&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TravisCI-23D65B?style=for-the-badge&logo=travis-ci&logoColor=white"/>
+  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Jenkins-5EC255?style=for-the-badge&logo=jenkins&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Terraform-9A67EA?style=for-the-badge&logo=terraform&logoColor=white"/>
+  <img src="https://img.shields.io/badge/CircleCI-169B87?style=for-the-badge&logo=circleci&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Bitbucket_Pipelines-0052CC?style=for-the-badge&logo=bitbucket&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Jest-23D0FF?style=for-the-badge&logo=jest&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Mocha-8D674F?style=for-the-badge&logo=mocha&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Cypress-39CCCC?style=for-the-badge&logo=cypress&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Selenium-5C4F3D?style=for-the-badge&logo=selenium&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Playwright-28A07D?style=for-the-badge&logo=playwright&logoColor=black"/>
+
+  <!-- 🔐 其他工具 / 安全 -->
+  <img src="https://img.shields.io/badge/Owasp&nbsp;ZAP-0099FF?style=for-the-badge&logo=owasp&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Burp Suite-00A8FF?style=for-the-badge&logo=burpsuite&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Vault-5E4A8B?style=for-the-badge&logo=hashicorp-vault&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Prometheus-D00000?style=for-the-badge&logo=prometheus&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Grafana-0062D6?style=for-the-badge&logo=grafana&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Dash‑board-39BB92?style=for-the-badge&logo=datadog&logoColor=white"/>
+  <img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Apache-Kafka-D40000?style=for-the-badge&logo=apache-kafka&logoColor=white"/>
+
+  <!-- 📱 移动 / 桌面 / 游戏 -->
+  <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white"/>
+  <img src="https://img.shields.io/badge/IOS-000000?style=for-the-badge&logo=apple&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Swift-F05C41?style=for-the-badge&logo=swift&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Unity-000000?style=for-the-badge&logo=unity&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Unreal‑Engine-8294A0?style=for-the-badge&logo=unreal-engine&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Godot-000000?style=for-the-badge&logo=godot-engine&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Electron-47848F?style=for-the-badge&logo=electron&logoColor=white"/>
+
+  <!-- 🌐 CDN / 内容分发 -->
+  <img src="https://img.shields.io/badge/Cloudflare-FFCC00?style=for-the-badge&logo=cloudflare&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Fastly-00FF00?style=for-the-badge&logo=fastly&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Akamai-0099FF?style=for-the-badge&logo=akamai&logoColor=white"/>
+
+  <!-- 💳 支付 |
+       (仅示例，若不需要可删掉) -->
+  <img src="https://img.shields.io/badge/Stripe-43459B?style=for-the-badge&logo=stripe&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PayPal-003087?style=for-the-badge&logo=paypal&logoColor=white"/>
 </p>
 
----
 
+<!-- ────────────────────── STATS ────────────────────── -->
 ## 📈 GitHub Stats
 <div align="center">
-
-<!-- 统计卡片（主题可改：dark、radical、tokyonight、gruvbox 等） -->
-<img src="https://github-readme-stats.vercel.app/api?username=luyii-code-1&show_icons=true&theme=tokyonight&rank_icon=percentile" height="165" alt="GitHub Stats"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=luyii-code-1&layout=compact&langs_count=8&theme=tokyonight" height="165" alt="Top Languages"/>
-
-<!-- 连续提交天数（Streak） -->
-<img src="https://streak-stats.demolab.com?user=luyii-code-1&theme=tokyonight" height="180" alt="GitHub Streak"/>
-
-<!-- 奖杯墙 -->
-<a href="https://github.com/ryo-ma/github-profile-trophy">
-  <img src="https://github-profile-trophy.vercel.app/?username=luyii-code-1&theme=onestar&column=6&margin-w=8&margin-h=8" alt="trophies"/>
-</a>
-
+  <img src="https://github-readme-stats.vercel.app/api?username=luyii-code-1&show_icons=true&theme=tokyonight&rank_icon=percentile" height="165"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=luyii-code-1&layout=compact&langs_count=8&theme=tokyonight" height="165"/>
+  <img src="https://streak-stats.demolab.com?user=luyii-code-1&theme=tokyonight" height="180"/>
+  <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=luyii-code-1&theme=onestar&column=6&margin-w=8&margin-h=8"/></a>
 </div>
 
----
-
+<!-- ────────────────────── BADGES ────────────────────── -->
 ## 🧰 Toolbox & Badges
-<!-- Shields：按需修改 -->
-<p>
-  <img alt="Docs: MkDocs" src="https://img.shields.io/badge/Docs-MkDocs-1f6feb?logo=markdown&logoColor=white&style=for-the-badge">
-  <img alt="CI: GitHub Actions" src="https://img.shields.io/badge/CI-GitHub_Actions-0078D4?logo=githubactions&logoColor=white&style=for-the-badge">
-  <img alt="Convert: Pandoc" src="https://img.shields.io/badge/Convert-Pandoc-3C3C3C?style=for-the-badge">
-  <img alt="Style: Prettier" src="https://img.shields.io/badge/Style-Prettier-F7B93E?logo=prettier&logoColor=white&style=for-the-badge">
-  <img alt="Lint: ESLint" src="https://img.shields.io/badge/Lint-ESLint-4B32C3?logo=eslint&logoColor=white&style=for-the-badge">
-  <!-- 你也可以加 Nginx、FFmpeg、DaVinci Resolve 等自己常用工具 -->
+<p align="center">
+  <img alt="Docs: MkDocs"     src="https://img.shields.io/badge/Docs-MkDocs-1f6feb?logo=markdown&logoColor=white&style=for-the-badge"/>
+  <img alt="CI: GitHub Actions" src="https://img.shields.io/badge/CI-GitHub_Actions-0078D4?logo=githubactions&logoColor=white&style=for-the-badge"/>
+  <img alt="Convert: Pandoc"   src="https://img.shields.io/badge/Convert-Pandoc-3C3C3C?style=for-the-badge"/>
+  <img alt="Style: Prettier"   src="https://img.shields.io/badge/Style-Prettier-F7B93E?logo=prettier&logoColor=white&style=for-the-badge"/>
+  <img alt="Lint: ESLint"     src="https://img.shields.io/badge/Lint-ESLint-4B32C3?logo=eslint&logoColor=white&style=for-the-badge"/>
 </p>
 
----
-
+<!-- ────────────────────── CONTACT ────────────────────── -->
 ## 📬 Reach Me
-- 📨 Email：hi@invalid.example
-- 💬 Issues：在任意仓库开个 issue @ 我
-- ✨ 如果这个 README 有用，来个 star ⭐
+- 📨 Email: hi@invalid.example
+- 💬 Issues: open an issue in any repo
+- ⭐️ If you like this readme, give it a star
 
----
-
-<!-- 进阶：编辑区（复制到你仓库即可工作） -->
+<!-- ────────────────────── OPTIONAL MODULES ────────────────────── -->
 <details>
-<summary>⚙️ 进阶开关（可选模块）</summary>
-
-### ⏱️ Wakatime
-> 需要你有 Wakatime 账号并公开数据
-<br>
-<img src="https://github-readme-stats.vercel.app/api/wakatime?username=luyii_code_1&layout=compact&theme=tokyonight"/>
-
-### 🐍 贪吃蛇贡献图
-> 使用 GitHub Action 生成 snake 动画（搜索 `Platane/snk` 教程）
-<br>
-<img src="https://raw.githubusercontent.com/luyii-code-1/luyii-code-1/output/github-contribution-grid-snake.svg" alt="Snake animation"/>
-
-### 🗂️ 置顶项目
-<a href="https://github.com/anuraghazra/github-readme-stats#github-extra-pins">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=luyii-code-1&repo=YOUR_REPO&theme=tokyonight" alt="Pinned repo"/>
-</a>
-
-</details>
-
-<!-- 页脚标识 -->
-<p align="center"><sub>Built with ❤ by a proud <em>Markdown Engineer</em>.</sub></p>
