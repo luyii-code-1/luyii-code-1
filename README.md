@@ -150,7 +150,7 @@
 
 <!-- ────────────────────── CONTACT ────────────────────── -->
 ## 📬 Reach Me
-- 📨 Email: hi@invalid.example
+- 📨 Email: root@luyii.cn
 - 💬 Issues: open an issue in any repo
 - ⭐️ If you like this readme, give it a star
 
