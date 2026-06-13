@@ -71,12 +71,39 @@
   .section-label::before { content: "## "; color: #30363d; }
   .tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
   .tech-tags span {
-    color: #7ee787;
-    background: rgba(126,231,135,0.08);
-    border: 1px solid rgba(126,231,135,0.2);
     padding: 0.3rem 0.6rem; border-radius: 4px;
     font-size: 0.78rem;
   }
+  /* Hand-written: solid green */
+  .tech-tags .py {
+    color: #7ee787;
+    background: rgba(126,231,135,0.12);
+    border: 1px solid rgba(126,231,135,0.35);
+  }
+  /* Web / hardware / other */
+  .tech-tags .web {
+    color: #8b949e;
+    background: rgba(139,148,158,0.08);
+    border: 1px solid rgba(139,148,158,0.2);
+  }
+  /* AI — rainbow animated text */
+  .tech-tags .ai {
+    background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,165,0,0.1), rgba(255,235,59,0.1), rgba(126,231,135,0.1), rgba(88,166,255,0.1), rgba(210,168,255,0.1));
+    border: 1px solid rgba(210,168,255,0.25);
+    background-size: 400% 400%;
+    animation: ai-glow 4s ease-in-out infinite;
+  }
+  .tech-tags .ai span {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff6b6b, #ffa500, #ffeb3b, #7ee787, #58a6ff, #d2a8ff, #ff6b6b);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: rainbow 3s linear infinite;
+  }
+  @keyframes rainbow { 0% { background-position: 0% 50%; } 100% { background-position: 400% 50%; } }
+  @keyframes ai-glow { 0%,100% { border-color: rgba(210,168,255,0.25); } 50% { border-color: rgba(88,166,255,0.5); } }
 
   /* ── Links ── */
   .links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
@@ -117,8 +144,10 @@
       </div>
 
       <div class="tech-tags">
-        <span>Python</span><span>HTML5</span><span>JavaScript</span><span>Node.js</span><span>Vue</span>
-        <span>ESP32</span><span>Claude Code</span><span>CodeX</span><span>DeepSeek</span><span>GPT 5.5</span>
+        <span class="py">Python</span>
+        <span class="web">HTML5</span><span class="web">JavaScript</span><span class="web">Node.js</span><span class="web">Vue</span>
+        <span class="web">ESP32</span>
+        <span class="ai"><span>Claude Code</span></span><span class="ai"><span>CodeX</span></span><span class="ai"><span>DeepSeek</span></span><span class="ai"><span>GPT 5.5</span></span>
       </div>
 
       <div class="output">
