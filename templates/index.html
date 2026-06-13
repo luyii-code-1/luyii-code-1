@@ -110,29 +110,6 @@
   .help-bar .key { color: #7ee787; }
   .help-bar .sep { color: #21262d; }
 
-  /* ── AI chat ── */
-  .ai-chat { margin: 8px 0; }
-  .ai-msg { margin: 4px 0; font-size: 0.85rem; line-height: 1.5; max-width: 100%; }
-  .ai-msg.user { color: #58a6ff; }
-  .ai-msg.user::before { content: "❯ "; color: #58a6ff; }
-  .ai-msg.assistant { color: #c9d1d9; }
-  .ai-msg.assistant::before { content: "✨ "; }
-  .ai-msg.system { color: #6e7681; font-style: italic; }
-  .ai-msg.system::before { content: "⚡ "; }
-  .ai-token-form { margin: 8px 0; display: none; }
-  .ai-token-form input {
-    background: #0d1117; border: 1px solid #30363d; border-radius: 4px;
-    color: #c9d1d9; font-family: inherit; font-size: 0.8rem; padding: 6px 10px;
-    width: 70%; margin-right: 8px;
-  }
-  .ai-token-form button {
-    background: #238636; border: none; color: #fff; font-family: inherit;
-    font-size: 0.8rem; padding: 6px 14px; border-radius: 4px; cursor: pointer;
-  }
-  .ai-token-form button:hover { background: #2ea043; }
-  .ai-loading { color: #d2a8ff; animation: pulse 1s infinite; }
-  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
-
   /* ── Prompt line ── */
   .prompt-line {
     display: flex; align-items: center; gap: 8px;
@@ -212,10 +189,6 @@
       <span class="key">date</span><span class="sep">|</span>
       <span class="key">claude</span><span class="sep">|</span>
       <span class="key">codex</span><span class="sep">|</span>
-      <span class="key">/ai</span><span class="sep">|</span>
-      <span class="key">/new</span><span class="sep">|</span>
-      <span class="key">/config</span><span class="sep">|</span>
-      <span class="key">/clean</span><span class="sep">|</span>
       <span class="key">clear</span><span class="sep">|</span>
       <span class="key">help</span>
     </div>
@@ -231,20 +204,8 @@
 <footer># EOF — &copy; {{ now() | date(format="%Y") }} luyii</footer>
 
 <script>
-/* ── State ── */
-const MAX_CTX = 128000; // 128K context window
-let chatMessages = JSON.parse(localStorage.getItem('luyii_chat') || '[]');
-let apiEndpoint = localStorage.getItem('luyii_api_endpoint') || '';
-let apiKey = localStorage.getItem('luyii_api_key') || '';
-let apiModel = localStorage.getItem('luyii_api_model') || '';
-
-// Setup wizard state: null | 0=endpoint | 1=key | 2=model
-let setupStep = null;
-let pendingAiMsg = '';
-
 const log = document.getElementById('log');
 const input = document.getElementById('cmd-input');
-const placeholder = document.getElementById('cmd-input');
 
 function writeLine(html) {
   const p = document.createElement('p');
@@ -254,175 +215,12 @@ function writeLine(html) {
   log.scrollTop = log.scrollHeight;
 }
 
-function saveConfig() {
-  try { localStorage.setItem('luyii_api_endpoint', apiEndpoint); } catch(e) {}
-  try { localStorage.setItem('luyii_api_key', apiKey); } catch(e) {}
-  try { localStorage.setItem('luyii_api_model', apiModel); } catch(e) {}
-}
-function saveChat() {
-  try { localStorage.setItem('luyii_chat', JSON.stringify(chatMessages)); } catch(e) {}
-}
-
-function isConfigured() {
-  return apiEndpoint && apiKey && apiModel;
-}
-
-/* ── Approximate token count (4 chars ≈ 1 token) ── */
-function estTokens(messages) {
-  let total = 0;
-  messages.forEach(m => { total += (m.content || '').length / 4 + 4; });
-  return Math.round(total);
-}
-
-/* ── Rolling context window ── */
-function enforceWindow() {
-  // Drop oldest messages while estimated tokens > 90% of 128K
-  while (estTokens(chatMessages) > MAX_CTX * 0.9 && chatMessages.length > 1) {
-    chatMessages.shift();
-  }
-  saveChat();
-
-  if (estTokens(chatMessages) > MAX_CTX * 0.8) {
-    writeLine(`<span class="comment">[Context: ~${estTokens(chatMessages)}/${MAX_CTX} tokens — </span><span class="py-hl">/new</span><span class="comment"> to reset]</span>`);
-  }
-  if (estTokens(chatMessages) >= MAX_CTX * 0.95) {
-    writeLine(`<span class="keyword">Context window full.</span> Use <span class="py-hl">/new</span> to start fresh.`);
-    return false; // stop, can't add more
-  }
-  return true;
-}
-
-function renderChat() {
-  log.querySelectorAll('.ai-chat').forEach(el => el.remove());
-  if (chatMessages.length === 0) return;
-
-  const div = document.createElement('div');
-  div.className = 'ai-chat';
-  chatMessages.forEach(m => {
-    const p = document.createElement('p');
-    p.className = 'ai-msg ' + (m.role === 'user' ? 'user' : m.role === 'assistant' ? 'assistant' : 'system');
-    p.textContent = m.role + ': ' + m.content;
-    div.appendChild(p);
-  });
-  log.appendChild(div);
-  log.scrollTop = log.scrollHeight;
-}
-
-/* ── AI API call ── */
-async function aiChat(userMsg) {
-  if (!isConfigured()) {
-    writeLine(`<span class="keyword">Not configured.</span> Starting setup...`);
-    startSetup(userMsg);
-    return;
-  }
-
-  if (!enforceWindow()) return;
-
-  chatMessages.push({ role: 'user', content: userMsg });
-  saveChat();
-  renderChat();
-
-  const loadingEl = document.createElement('p');
-  loadingEl.className = 'ai-msg assistant ai-loading';
-  loadingEl.textContent = 'assistant: thinking...';
-  const chatDiv = log.querySelector('.ai-chat') || log.appendChild(document.createElement('div'));
-  chatDiv.appendChild(loadingEl);
-  log.scrollTop = log.scrollHeight;
-
-  try {
-    const res = await fetch(apiEndpoint + '/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + apiKey
-      },
-      body: JSON.stringify({
-        model: apiModel,
-        messages: [
-          { role: 'system', content: 'You are a helpful assistant in luyii\'s terminal. Keep replies short (<200 words). Use markdown.' },
-          ...chatMessages
-        ],
-        max_tokens: 1024
-      })
-    });
-    loadingEl.remove();
-
-    if (!res.ok) {
-      const err = await res.text();
-      chatMessages.push({ role: 'system', content: 'API error ' + res.status });
-      writeLine(`<span class="keyword">API error ${res.status}:</span> ${err.slice(0,200)}`);
-      saveChat(); renderChat();
-      return;
-    }
-
-    const data = await res.json();
-    const reply = data.choices[0].message.content;
-    chatMessages.push({ role: 'assistant', content: reply });
-    enforceWindow();
-    saveChat(); renderChat();
-  } catch(e) {
-    loadingEl.remove();
-    writeLine(`<span class="keyword">Network error:</span> ${e.message}`);
-  }
-}
-
-/* ── Setup wizard ── */
-function startSetup(msg) {
-  pendingAiMsg = msg;
-  setupStep = 0;
-  placeholder.placeholder = 'API Endpoint...';
-  writeLine(`<span class="comment">━━━ API Setup (3 steps) ━━━</span>`);
-  writeLine(`<span class="comment">Step 1/3 — Enter your API Endpoint:</span>`);
-  writeLine(`<span class="comment">e.g.</span> <span class="string">https://api.openai.com/v1</span>`);
-}
-
-function setupStep2() {
-  apiEndpoint = input.value.trim();
-  setupStep = 1;
-  placeholder.placeholder = 'API Key...';
-  writeLine(`<span class="py-hl">Endpoint:</span> ${apiEndpoint}`);
-  writeLine(`<span class="comment">Step 2/3 — Enter your API Key:</span>`);
-  writeLine(`<span class="comment">e.g.</span> <span class="string">sk-...</span>`);
-}
-
-function setupStep3() {
-  apiKey = input.value.trim();
-  setupStep = 2;
-  placeholder.placeholder = 'Model name...';
-  writeLine(`<span class="py-hl">Key:</span> ${apiKey.slice(0,10)}...<span class="string">****</span>`);
-  writeLine(`<span class="comment">Step 3/3 — Enter Model:</span>`);
-  writeLine(`<span class="comment">e.g.</span> <span class="string">gpt-4o-mini</span> <span class="comment">or</span> <span class="string">deepseek-chat</span>`);
-}
-
-function setupDone() {
-  apiModel = input.value.trim();
-  setupStep = null;
-  placeholder.placeholder = 'type a command...';
-  saveConfig();
-  writeLine(`<span class="py-hl">Model:</span> ${apiModel}`);
-  writeLine(`<span class="py-hl">✔ Config saved.</span> <span class="comment">(Endpoint + Key + Model → localStorage, 128K context)</span>`);
-
-  if (pendingAiMsg) {
-    const msg = pendingAiMsg;
-    pendingAiMsg = '';
-    aiChat(msg);
-  } else {
-    writeLine(`<span class="comment">Try</span> <span class="py-hl">/ai hello world</span>`);
-  }
-}
-
-/* ── Commands ── */
 const cmds = {
   help() {
     writeLine(`<span class="comment">Commands:</span>`);
     writeLine(`  <span class="py-hl">whoami</span> <span class="py-hl">ls</span> <span class="py-hl">neofetch</span> <span class="py-hl">cat</span> <span class="py-hl">echo &lt;text&gt;</span> <span class="py-hl">date</span> <span class="py-hl">clear</span>`);
     writeLine(`  <span class="py-hl">claude</span> — open local Claude Code`);
     writeLine(`  <span class="py-hl">codex</span> — open local CodeX`);
-    writeLine(`  <span class="py-hl">/ai &lt;msg&gt;</span> — AI chat (auto-setup if needed)`);
-    writeLine(`  <span class="py-hl">/config</span> — show current config`);
-    writeLine(`  <span class="py-hl">/setup</span> — re-run API setup`);
-    writeLine(`  <span class="py-hl">/new</span> — fresh conversation`);
-    writeLine(`  <span class="py-hl">/clean</span> — clear chat + config`);
   },
   whoami() {
     writeLine(`luyii / luyii-code-1 — Vibe Engineer`);
@@ -453,63 +251,13 @@ const cmds = {
     writeLine(`<span class="comment">Launching CodeX...</span>`);
     window.open('codex://', '_self');
   },
-
-  /* ── AI ── */
-  '/ai'(val) {
-    if (!val) { writeLine(`<span class="comment">Usage:</span> <span class="py-hl">/ai &lt;your question&gt;</span>`); return; }
-    if (!isConfigured()) {
-      startSetup(val);
-      return;
-    }
-    aiChat(val);
-  },
-  '/config'() {
-    if (!isConfigured()) {
-      writeLine(`<span class="comment">Not configured. Use</span> <span class="py-hl">/ai &lt;msg&gt;</span> <span class="comment">to auto-setup.</span>`);
-      return;
-    }
-    writeLine(`<span class="comment">Endpoint:</span> ${apiEndpoint}`);
-    writeLine(`<span class="comment">Key:</span> ${apiKey.slice(0,10)}...`);
-    writeLine(`<span class="comment">Model:</span> ${apiModel}`);
-    writeLine(`<span class="comment">Context:</span> ${estTokens(chatMessages)} / ${MAX_CTX} tokens (${chatMessages.length} msgs)`);
-  },
-  '/setup'() {
-    writeLine(`<span class="comment">Re-running setup...</span>`);
-    startSetup('');
-  },
-  '/new'() {
-    chatMessages = [];
-    saveChat();
-    log.querySelectorAll('.ai-chat').forEach(el => el.remove());
-    writeLine(`<span class="py-hl">New conversation.</span> Context: 0 / ${MAX_CTX} tokens.`);
-  },
-  '/clean'() {
-    chatMessages = [];
-    apiEndpoint = ''; apiKey = ''; apiModel = '';
-    saveChat(); saveConfig();
-    try { localStorage.removeItem('luyii_chat'); localStorage.removeItem('luyii_api_endpoint'); localStorage.removeItem('luyii_api_key'); localStorage.removeItem('luyii_api_model'); } catch(e) {}
-    log.querySelectorAll('.ai-chat').forEach(el => el.remove());
-    writeLine(`<span class="py-hl">All chat history & config cleared.</span>`);
-  },
 };
 
-/* ── Input handler ── */
 input.addEventListener('keydown', e => {
   if (e.key !== 'Enter') return;
   const raw = input.value.trim();
   input.value = '';
 
-  // ── Setup wizard active ──
-  if (setupStep !== null) {
-    writeLine(`<span class="path">~/luyii</span> <span class="pmark">❯</span> ${raw || '(empty)'}`);
-    if (!raw) { writeLine(`<span class="keyword">Please enter a value.</span>`); return; }
-    if (setupStep === 0) setupStep2();
-    else if (setupStep === 1) setupStep3();
-    else if (setupStep === 2) setupDone();
-    return;
-  }
-
-  // ── Normal commands ──
   writeLine(`<span class="path">~/luyii</span> <span class="pmark">❯</span> ${raw}`);
   if (!raw) return;
 
@@ -524,12 +272,6 @@ input.addEventListener('keydown', e => {
 });
 
 document.addEventListener('click', () => input.focus());
-
-// restore saved chat on load
-if (chatMessages.length > 0) {
-  writeLine(`<span class="comment">[Restored ${chatMessages.length} messages from last session. Context: ~${estTokens(chatMessages)}/${MAX_CTX} tokens]</span>`);
-  renderChat();
-}
 </script>
 </body>
 </html>
