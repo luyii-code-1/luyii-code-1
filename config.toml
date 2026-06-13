@@ -1,0 +1,9 @@
+base_url = "https://luyii.pages.dev"
+title = "luyii"
+description = "Developer. Building tools, scripts, and exploring different tech directions."
+compile_sass = false
+build_search_index = false
+
+[extra]
+author = "luyii"
+email = "root@luyii.cn"
