@@ -33,26 +33,26 @@
 
   /* ── Terminal ── */
   .terminal {
-    max-width: 720px; width: 100%;
+    max-width: 860px; width: 100%;
     background: #161b22;
-    border: 1px solid #30363d; border-radius: 8px;
+    border: 1px solid #30363d; border-radius: 10px;
     overflow: hidden; position: relative; z-index: 1;
     box-shadow: 0 0 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(210,168,255,0.05);
   }
   .terminal-bar {
-    display: flex; align-items: center; gap: 6px;
-    padding: 10px 14px;
+    display: flex; align-items: center; gap: 8px;
+    padding: 12px 18px;
     background: #21262d; border-bottom: 1px solid #30363d;
   }
-  .terminal-bar .dot { width: 11px; height: 11px; border-radius: 50%; }
+  .terminal-bar .dot { width: 13px; height: 13px; border-radius: 50%; }
   .td-r { background: #ff5f56; } .td-y { background: #ffbd2e; } .td-g { background: #27c93f; }
   .terminal-bar .ttl {
     flex: 1; text-align: center;
-    color: #6e7681; font-size: 0.7rem; margin-right: 33px;
+    color: #6e7681; font-size: 0.8rem; margin-right: 39px;
   }
 
   /* ── Body (scrollable log) ── */
-  .terminal-body { padding: 20px 20px 0; max-height: 500px; overflow-y: auto; }
+  .terminal-body { padding: 24px 24px 0; max-height: 560px; overflow-y: auto; }
 
   /* ── Intro block ── */
   .output .comment { color: #6e7681; }
@@ -61,25 +61,25 @@
   .output .func { color: #d2a8ff; }
   .output .py-hl { color: #7ee787; }
 
-  h1 { font-size: 1.1rem; font-weight: 600; color: #f0f6fc; margin-bottom: 0.6rem; }
+  h1 { font-size: 1.3rem; font-weight: 600; color: #f0f6fc; margin-bottom: 0.7rem; }
 
-  .block { margin: 0 0 0.5rem; font-size: 0.82rem; line-height: 1.55; color: #8b949e; }
+  .block { margin: 0 0 0.5rem; font-size: 0.92rem; line-height: 1.6; color: #8b949e; }
 
   /* ── Columns ── */
   .cols { display: flex; gap: 12px; margin: 0.5rem 0 0.8rem; flex-wrap: wrap; }
   .col {
-    flex: 1; min-width: 140px;
-    background: #0d1117; border: 1px solid #21262d; border-radius: 6px;
-    padding: 10px 12px;
+    flex: 1; min-width: 160px;
+    background: #0d1117; border: 1px solid #21262d; border-radius: 8px;
+    padding: 12px 14px;
   }
   .col-title {
-    font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em;
-    margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #21262d;
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #21262d;
   }
   .col .tag {
     display: inline-block;
-    padding: 2px 7px; border-radius: 3px;
-    font-size: 0.7rem; margin: 2px 3px 2px 0;
+    padding: 3px 8px; border-radius: 4px;
+    font-size: 0.78rem; margin: 3px 4px 3px 0;
   }
 
   /* Column themes */
@@ -115,20 +115,20 @@
 
   /* ── Prompt line ── */
   .prompt-line {
-    display: flex; align-items: center; gap: 6px;
-    padding: 10px 0 0; border-top: 1px solid #21262d;
-    font-size: 0.82rem; margin-top: 4px;
+    display: flex; align-items: center; gap: 8px;
+    padding: 12px 24px 10px; border-top: 1px solid #21262d;
+    font-size: 0.92rem; margin-top: 6px;
   }
   .prompt-line .path { color: #58a6ff; white-space: nowrap; }
   .prompt-line .pmark { color: #7ee787; }
   #cmd-input {
     flex: 1; background: transparent; border: none; outline: none;
-    color: #c9d1d9; font-family: inherit; font-size: 0.82rem; caret-color: #d2a8ff;
+    color: #c9d1d9; font-family: inherit; font-size: 0.92rem; caret-color: #d2a8ff;
   }
   #cmd-input::placeholder { color: #30363d; }
 
   /* ── Footer ── */
-  footer { margin-top: 1.5rem; color: #21262d; font-size: 0.7rem; position: relative; z-index: 1; }
+  footer { margin-top: 1.5rem; color: #21262d; font-size: 0.78rem; position: relative; z-index: 1; }
 
   /* ── Scanlines ── */
   .scanlines {
