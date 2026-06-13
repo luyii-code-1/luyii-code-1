@@ -1,74 +1,31 @@
-<!-- ────────────────────── HEADER ────────────────────── -->
-<div align="center">
-  <h1>Hi, I'm <code>luyii-code-1</code> 👋</h1>
+<h2 align="center">Hi There 👋</h2>
 
-  <!-- ① 徽章行（可自行删减） -->
-  <a href="https://komarev.com/ghpvc/?username=luyii-code-1&style=flat-square"><img alt="Visitor Badge" src="https://komarev.com/ghpvc/?username=luyii-code-1&style=flat-square"/></a>
-  <a href="https://github.com/luyii-code-1?tab=followers"><img alt="GitHub followers" src="https://img.shields.io/github/followers/luyii-code-1?style=flat-square"/></a>
-  <a href="https://github.com/luyii-code-1"><img alt="GitHub stars" src="https://img.shields.io/github/stars/luyii-code-1?style=flat-square"/></a>
-  <a href="mailto:hi@invalid.example">
+I'm a developer who enjoys building things — tools, scripts, and exploring different tech directions. If you find something useful here, that's great. Open to discussing tech and collaborating.
 
-  <!-- ② 可选 Typing SVG 动画：注释掉即隐藏 -->
-  <!-- <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1200&center=true&vCenter=true&width=700&lines=Markdown+Engineer+%F0%9F%93%9D+-+Code+少+%7C+Bio+花;Open-source+Enthusiast;Docs%2C+CI%2FCD%2C+Icons%2C+Automation" alt="Typing SVG"/> -->
-</div>
-
-
-<!-- ────────────────────── SKILLS ────────────────────── -->
-<!-- ────────────────────── SKILLS ────────────────────── -->
-<!-- ────────────────────── SKILLS ────────────────────── -->
-## 🧩 Tech Stack
+<h3 align="center">🛠 Tech Stack</h3>
 <p align="center">
-  <!-- 1️⃣ 文档 / 版本 -->
-  <img src="https://img.shields.io/badge/Markdown-8A2BE2?style=for-the-badge&logo=markdown&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Git-181717?style=for-the-badge&logo=git&logoColor=white"/>
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
-
-  <!-- 2️⃣ 前端基础 -->
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
-  <!-- 4️⃣ 后端 / 语言 -->
-
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-
-
-  <!-- 7️⃣ 容器 / 云原生 -->
-
-  <!-- 9️⃣ DevOps / CI / Testing -->
-
-  <!-- 🔐 其他工具 / 安全 -->
-
-
-  <img src="https://img.shields.io/badge/Cloudflare-FFCC00?style=for-the-badge&logo=cloudflare&logoColor=black"/>
-
-  <!-- 💳 支付 |
-       (仅示例，若不需要可删掉) -->
-
+	<img alt="Claude Code" src="https://img.shields.io/badge/Claude_Code-D97706?logo=claude&logoColor=fff&style=flat-square" />
+	<img alt="CodeX" src="https://img.shields.io/badge/CodeX-000?logo=openai&logoColor=fff&style=flat-square" />
+	<img alt="DeepSeek" src="https://img.shields.io/badge/DeepSeek-4F6BED?logo=deepseek&logoColor=fff&style=flat-square" />
+	<img alt="MiniMax" src="https://img.shields.io/badge/MiniMax-7B3FF2?logo=minimax&logoColor=fff&style=flat-square" />
+	<img alt="Qwen" src="https://img.shields.io/badge/Qwen-615FFF?logo=qwen&logoColor=fff&style=flat-square" />
+	<img alt="Mimo" src="https://img.shields.io/badge/Mimo-FCCB00?logo=mimo&logoColor=000&style=flat-square" />
+	<br/>
+	<img alt="Python" src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=flat-square" />
+	<img alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=flat-square" />
+	<img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat-square" />
+	<img alt="Node.js" src="https://img.shields.io/badge/Node.js-5FA04E?logo=nodedotjs&logoColor=fff&style=flat-square" />
+	<img alt="Vue" src="https://img.shields.io/badge/Vue-4FC08D?logo=vuedotjs&logoColor=fff&style=flat-square" />
+	<img alt="ESP32" src="https://img.shields.io/badge/ESP32-E7352C?logo=espressif&logoColor=fff&style=flat-square" />
 </p>
 
-
-<!-- ────────────────────── STATS ────────────────────── -->
-## 📈 GitHub Stats
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=luyii-code-1&show_icons=true&theme=tokyonight&rank_icon=percentile" height="165"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=luyii-code-1&layout=compact&langs_count=8&theme=tokyonight" height="165"/>
-  <img src="https://streak-stats.demolab.com?user=luyii-code-1&theme=tokyonight" height="180"/>
-  <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=luyii-code-1&theme=onestar&column=6&margin-w=8&margin-h=8"/></a>
-</div>
-
-<!-- ────────────────────── BADGES ────────────────────── -->
-## 🧰 Toolbox & Badges
+<h3 align="center">📊 Stats</h3>
 <p align="center">
-  <img alt="Docs: MkDocs"     src="https://img.shields.io/badge/Docs-MkDocs-1f6feb?logo=markdown&logoColor=white&style=for-the-badge"/>
-  <img alt="CI: GitHub Actions" src="https://img.shields.io/badge/CI-GitHub_Actions-0078D4?logo=githubactions&logoColor=white&style=for-the-badge"/>
-  <img alt="Convert: Pandoc"   src="https://img.shields.io/badge/Convert-Pandoc-3C3C3C?style=for-the-badge"/>
-  <img alt="Style: Prettier"   src="https://img.shields.io/badge/Style-Prettier-F7B93E?logo=prettier&logoColor=white&style=for-the-badge"/>
-  <img alt="Lint: ESLint"     src="https://img.shields.io/badge/Lint-ESLint-4B32C3?logo=eslint&logoColor=white&style=for-the-badge"/>
+	<img alt="GitHub Stats" src="https://github-readme-stats.vercel.app/api?username=luyii-code-1&show_icons=true&theme=dark&hide_title=true&rank_icon=percentile" height="150" />
+	<img alt="Top Languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=luyii-code-1&layout=compact&theme=dark" height="150" />
 </p>
 
-<!-- ────────────────────── CONTACT ────────────────────── -->
-## 📬 Reach Me
-- 📨 Email: root@luyii.cn
-- 💬 Issues: open an issue in any repo
-- ⭐️ If you like this readme, give it a star
-
-<!-- ────────────────────── OPTIONAL MODULES ────────────────────── -->
-<details>
+<p align="center">
+	<a href="mailto:root@luyii.cn"><img alt="Email" src="https://img.shields.io/badge/Email-root@luyii.cn-005FF9?logo=maildotru&logoColor=fff&style=flat-square" /></a>
+	<a href="https://github.com/luyii-code-1"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-luyii--code--1-181717?logo=github&logoColor=fff&style=flat-square" /></a>
+</p>
