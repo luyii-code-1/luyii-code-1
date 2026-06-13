@@ -16,15 +16,14 @@
   body {
     background: #0c0c0d;
     color: #c9d1d9;
-    font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", Consolas, monospace;
+    font-family: "JetBrains Mono","Fira Code","Cascadia Code",Consolas,monospace;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     min-height: 100vh; padding: 2rem;
   }
 
-  /* ── Glow orb (Claude Code style) ── */
   .glow-orb {
     position: fixed; top: -200px; left: 50%; transform: translateX(-50%);
-    width: 500px; height: 500px;
+    width: 600px; height: 600px;
     background: radial-gradient(circle, rgba(210,168,255,0.06) 0%, transparent 70%);
     pointer-events: none; z-index: 0;
     animation: orb-pulse 6s ease-in-out infinite;
@@ -34,8 +33,7 @@
   /* ── Terminal ── */
   .terminal {
     max-width: 860px; width: 100%;
-    background: #161b22;
-    border: 1px solid #30363d; border-radius: 10px;
+    background: #161b22; border: 1px solid #30363d; border-radius: 10px;
     overflow: hidden; position: relative; z-index: 1;
     box-shadow: 0 0 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(210,168,255,0.05);
   }
@@ -44,17 +42,20 @@
     padding: 12px 18px;
     background: #21262d; border-bottom: 1px solid #30363d;
   }
-  .terminal-bar .dot { width: 13px; height: 13px; border-radius: 50%; }
-  .td-r { background: #ff5f56; } .td-y { background: #ffbd2e; } .td-g { background: #27c93f; }
+  .terminal-bar .dot { width: 13px; height: 13px; border-radius: 50%; cursor: default; }
+  .td-r { background: #ff5f56; cursor: pointer !important; }
+  .td-r:hover { background: #ff3b30; }
+  .td-y { background: #494949; } /* greyed out */
+  .td-g { background: #27c93f; cursor: pointer !important; }
+  .td-g:hover { background: #33d94b; }
   .terminal-bar .ttl {
     flex: 1; text-align: center;
     color: #6e7681; font-size: 0.8rem; margin-right: 39px;
   }
 
-  /* ── Body (scrollable log) ── */
   .terminal-body { padding: 24px 24px 0; max-height: 560px; overflow-y: auto; }
 
-  /* ── Intro block ── */
+  /* ── Intro output ── */
   .output .comment { color: #6e7681; }
   .output .keyword { color: #ff7b72; }
   .output .string { color: #a5d6ff; }
@@ -62,7 +63,6 @@
   .output .py-hl { color: #7ee787; }
 
   h1 { font-size: 1.3rem; font-weight: 600; color: #f0f6fc; margin-bottom: 0.7rem; }
-
   .block { margin: 0 0 0.5rem; font-size: 0.92rem; line-height: 1.6; color: #8b949e; }
 
   /* ── Columns ── */
@@ -76,13 +76,6 @@
     font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em;
     margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #21262d;
   }
-  .col .tag {
-    display: inline-block;
-    padding: 3px 8px; border-radius: 4px;
-    font-size: 0.78rem; margin: 3px 4px 3px 0;
-  }
-
-  /* Column themes */
   .col-ai  { border-color: rgba(210,168,255,0.15); }
   .col-ai .col-title { color: #d2a8ff; }
   .col-py  { border-color: rgba(126,231,135,0.15); }
@@ -90,28 +83,55 @@
   .col-hw  { border-color: rgba(255,165,0,0.12); }
   .col-hw .col-title { color: #ffa657; }
 
-  /* Tag themes */
+  .tag {
+    display: inline-block; padding: 3px 8px; border-radius: 4px;
+    font-size: 0.78rem; margin: 3px 4px 3px 0;
+  }
   .tag.ai {
-    background: linear-gradient(135deg, rgba(255,107,107,0.12), rgba(255,165,0,0.12), rgba(255,235,59,0.12), rgba(126,231,135,0.12), rgba(88,166,255,0.12), rgba(210,168,255,0.12));
+    background: linear-gradient(135deg,rgba(255,107,107,0.12),rgba(255,165,0,0.12),rgba(255,235,59,0.12),rgba(126,231,135,0.12),rgba(88,166,255,0.12),rgba(210,168,255,0.12));
     border: 1px solid rgba(210,168,255,0.2);
   }
   .tag.ai span {
-    background: linear-gradient(90deg, #ff6b6b, #ffa500, #ffeb3b, #7ee787, #58a6ff, #d2a8ff);
+    background: linear-gradient(90deg,#ff6b6b,#ffa500,#ffeb3b,#7ee787,#58a6ff,#d2a8ff);
     background-size: 300% 100%;
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: rainbow 4s linear infinite;
   }
   @keyframes rainbow { 0% { background-position: 0% 50%; } 100% { background-position: 300% 50%; } }
+  .tag.py { color: #7ee787; background: rgba(126,231,135,0.1); border: 1px solid rgba(126,231,135,0.25); }
+  .tag.hw { color: #ffa657; background: rgba(255,165,0,0.08); border: 1px solid rgba(255,165,0,0.15); }
 
-  .tag.py {
-    color: #7ee787; background: rgba(126,231,135,0.1);
-    border: 1px solid rgba(126,231,135,0.25);
+  /* ── Help bar ── */
+  .help-bar {
+    display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 4px; font-size: 0.73rem;
+    color: #484f58; line-height: 1.5;
   }
-  .tag.hw {
-    color: #ffa657; background: rgba(255,165,0,0.08);
-    border: 1px solid rgba(255,165,0,0.15);
+  .help-bar .key { color: #7ee787; }
+  .help-bar .sep { color: #21262d; }
+
+  /* ── AI chat ── */
+  .ai-chat { margin: 8px 0; }
+  .ai-msg { margin: 4px 0; font-size: 0.85rem; line-height: 1.5; max-width: 100%; }
+  .ai-msg.user { color: #58a6ff; }
+  .ai-msg.user::before { content: "❯ "; color: #58a6ff; }
+  .ai-msg.assistant { color: #c9d1d9; }
+  .ai-msg.assistant::before { content: "✨ "; }
+  .ai-msg.system { color: #6e7681; font-style: italic; }
+  .ai-msg.system::before { content: "⚡ "; }
+  .ai-token-form { margin: 8px 0; display: none; }
+  .ai-token-form input {
+    background: #0d1117; border: 1px solid #30363d; border-radius: 4px;
+    color: #c9d1d9; font-family: inherit; font-size: 0.8rem; padding: 6px 10px;
+    width: 70%; margin-right: 8px;
   }
+  .ai-token-form button {
+    background: #238636; border: none; color: #fff; font-family: inherit;
+    font-size: 0.8rem; padding: 6px 14px; border-radius: 4px; cursor: pointer;
+  }
+  .ai-token-form button:hover { background: #2ea043; }
+  .ai-loading { color: #d2a8ff; animation: pulse 1s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
 
   /* ── Prompt line ── */
   .prompt-line {
@@ -127,13 +147,11 @@
   }
   #cmd-input::placeholder { color: #30363d; }
 
-  /* ── Footer ── */
   footer { margin-top: 1.5rem; color: #21262d; font-size: 0.78rem; position: relative; z-index: 1; }
 
-  /* ── Scanlines ── */
   .scanlines {
     pointer-events: none; position: fixed; inset: 0; z-index: 99;
-    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+    background: repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);
   }
 </style>
 </head>
@@ -144,17 +162,16 @@
 
 <div class="terminal">
   <div class="terminal-bar">
-    <span class="dot td-r"></span><span class="dot td-y"></span><span class="dot td-g"></span>
+    <span class="dot td-r" title="Close page" onclick="window.close()||(window.location='about:blank')"></span>
+    <span class="dot td-y" title="—"></span>
+    <span class="dot td-g" title="Toggle fullscreen" onclick="document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()"></span>
     <span class="ttl">luyii — zsh — 80×24</span>
   </div>
 
   <div class="terminal-body" id="log">
-    <!-- ── Neofetch-style header ── -->
     <div class="output">
       <h1><span class="comment">##</span> Hi There 👋</h1>
-      <p class="block">
-        <span class="keyword">const</span> <span class="func">about</span> = {
-      </p>
+      <p class="block"><span class="keyword">const</span> <span class="func">about</span> = {</p>
       <p class="block">&nbsp;&nbsp;name: <span class="string">"luyii"</span>,</p>
       <p class="block">&nbsp;&nbsp;aka: <span class="string">"luyii-code-1"</span>,</p>
       <p class="block">&nbsp;&nbsp;role: <span class="string">"Vibe Engineer"</span>,</p>
@@ -162,7 +179,6 @@
       <p class="block">};</p>
     </div>
 
-    <!-- ── 3-column stack ── -->
     <p class="block"><span class="comment">## stack</span></p>
     <div class="cols">
       <div class="col col-ai">
@@ -187,20 +203,43 @@
       </div>
     </div>
 
-    <p class="block"><span class="comment">// Type a command below — try </span><span class="py-hl">help</span></p>
+    <div class="help-bar">
+      <span class="key">whoami</span><span class="sep">|</span>
+      <span class="key">ls</span><span class="sep">|</span>
+      <span class="key">neofetch</span><span class="sep">|</span>
+      <span class="key">cat</span><span class="sep">|</span>
+      <span class="key">echo</span><span class="sep">|</span>
+      <span class="key">date</span><span class="sep">|</span>
+      <span class="key">claude</span><span class="sep">|</span>
+      <span class="key">codex</span><span class="sep">|</span>
+      <span class="key">/ai</span><span class="sep">|</span>
+      <span class="key">/new</span><span class="sep">|</span>
+      <span class="key">/clean</span><span class="sep">|</span>
+      <span class="key">/token</span><span class="sep">|</span>
+      <span class="key">clear</span><span class="sep">|</span>
+      <span class="key">help</span>
+    </div>
+    <p class="block" style="font-size:0.7rem;color:#30363d;">
+      🔴 close page &nbsp;|&nbsp; 🟢 fullscreen &nbsp;|&nbsp; 🟡 —
+    </p>
   </div>
 
-  <!-- ── Interactive prompt ── -->
   <div class="prompt-line">
     <span class="path">~/luyii</span>
     <span class="pmark">❯</span>
-    <input type="text" id="cmd-input" placeholder="help" autofocus autocomplete="off" spellcheck="false">
+    <input type="text" id="cmd-input" placeholder="type a command..." autofocus autocomplete="off" spellcheck="false">
   </div>
 </div>
 
 <footer># EOF — &copy; {{ now() | date(format="%Y") }} luyii</footer>
 
 <script>
+/* ── State ── */
+const MAX_HISTORY = 24; // rolling window
+let chatMessages = JSON.parse(localStorage.getItem('luyii_chat') || '[]');
+let apiToken = localStorage.getItem('luyii_api_token') || '';
+let aiActive = false;
+
 const log = document.getElementById('log');
 const input = document.getElementById('cmd-input');
 
@@ -212,9 +251,111 @@ function writeLine(html) {
   log.scrollTop = log.scrollHeight;
 }
 
+function saveState() {
+  try { localStorage.setItem('luyii_chat', JSON.stringify(chatMessages)); } catch(e) {}
+}
+
+/* ── Rolling window ── */
+function enforceWindow() {
+  if (chatMessages.length > MAX_HISTORY) {
+    const overflow = chatMessages.length - MAX_HISTORY;
+    chatMessages = chatMessages.slice(overflow);
+    writeLine(`<span class="comment">[dropped ${overflow} old messages to stay in window]</span>`);
+    saveState();
+  }
+}
+
+function renderChat() {
+  // Remove old AI chat DOM
+  log.querySelectorAll('.ai-chat').forEach(el => el.remove());
+  if (chatMessages.length === 0) return;
+
+  const div = document.createElement('div');
+  div.className = 'ai-chat';
+  chatMessages.forEach(m => {
+    const p = document.createElement('p');
+    p.className = 'ai-msg ' + (m.role === 'user' ? 'user' : m.role === 'assistant' ? 'assistant' : 'system');
+    p.textContent = m.content;
+    div.appendChild(p);
+  });
+  log.appendChild(div);
+  log.scrollTop = log.scrollHeight;
+}
+
+/* ── AI API call ── */
+async function aiChat(userMsg) {
+  if (!apiToken) {
+    writeLine(`<span class="keyword">No API token set.</span> Use <span class="py-hl">/token</span> to set your OpenAI-compatible key.`);
+    return;
+  }
+  chatMessages.push({ role: 'user', content: userMsg });
+  enforceWindow();
+  saveState();
+  renderChat();
+
+  // Show loading
+  const loadingEl = document.createElement('p');
+  loadingEl.className = 'ai-msg assistant ai-loading';
+  loadingEl.innerHTML = 'thinking...';
+  const chatDiv = log.querySelector('.ai-chat') || log.appendChild(document.createElement('div'));
+  chatDiv.appendChild(loadingEl);
+  log.scrollTop = log.scrollHeight;
+
+  try {
+    const res = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + apiToken
+      },
+      body: JSON.stringify({
+        model: 'gpt-4o-mini',
+        messages: [
+          { role: 'system', content: 'You are a helpful assistant in luyii\'s terminal. Keep replies short (<200 words). Use markdown.' },
+          ...chatMessages
+        ],
+        max_tokens: 512
+      })
+    });
+    loadingEl.remove();
+
+    if (!res.ok) {
+      const err = await res.text();
+      chatMessages.push({ role: 'system', content: 'API error: ' + res.status + ' — check /token' });
+      writeLine(`<span class="keyword">API error ${res.status}:</span> ${err.slice(0,200)}`);
+      saveState();
+      renderChat();
+      return;
+    }
+
+    const data = await res.json();
+    const reply = data.choices[0].message.content;
+    chatMessages.push({ role: 'assistant', content: reply });
+    enforceWindow();
+    saveState();
+    renderChat();
+
+    // Warn if approaching limit
+    if (chatMessages.length >= MAX_HISTORY - 2) {
+      writeLine(`<span class="comment">[context window nearly full — use </span><span class="py-hl">/new</span><span class="comment"> to start fresh]</span>`);
+    }
+  } catch(e) {
+    loadingEl.remove();
+    writeLine(`<span class="keyword">Network error:</span> ${e.message}`);
+  }
+}
+
+/* ── Commands ── */
 const cmds = {
   help() {
-    writeLine(`<span class="comment">Available:</span> <span class="py-hl">whoami</span> <span class="py-hl">ls</span> <span class="py-hl">cat</span> <span class="py-hl">neofetch</span> <span class="py-hl">clear</span> <span class="py-hl">echo</span> <span class="py-hl">date</span>`);
+    writeLine(`<span class="comment">Commands:</span>`);
+    writeLine(`  <span class="py-hl">whoami</span> <span class="py-hl">ls</span> <span class="py-hl">neofetch</span> <span class="py-hl">cat</span> <span class="py-hl">echo &lt;text&gt;</span> <span class="py-hl">date</span> <span class="py-hl">clear</span>`);
+    writeLine(`  <span class="py-hl">claude</span> — open local Claude Code`);
+    writeLine(`  <span class="py-hl">codex</span> — open local CodeX`);
+    writeLine(`  <span class="py-hl">/ai &lt;msg&gt;</span> — AI chat (OpenAI API)`);
+    writeLine(`  <span class="py-hl">/token &lt;key&gt;</span> — set API token (localStorage)`);
+    writeLine(`  <span class="py-hl">/new</span> — fresh AI conversation`);
+    writeLine(`  <span class="py-hl">/clean</span> — clear all chat history`);
   },
   whoami() {
     writeLine(`luyii / luyii-code-1 — Vibe Engineer`);
@@ -239,15 +380,51 @@ const cmds = {
   echo(val) {
     writeLine(val || '');
   },
-  clear() {
-    log.innerHTML = '';
+  clear() { log.innerHTML = ''; },
+
+  claude() {
+    writeLine(`<span class="comment">Launching local Claude Code...</span>`);
+    writeLine(`<span class="py-hl">claude</span> <span class="comment">— if installed, run in your terminal:</span> <span class="string">claude</span>`);
+    window.open('claude://', '_self');
   },
-  about() {
-    writeLine(`I write <span class="py-hl">Python</span> by hand, work with <span class="ai-txt">CodeX & Claude Code</span>, and use <span class="ai-txt">DeepSeek & GPT 5.5</span> daily.`);
+  codex() {
+    writeLine(`<span class="comment">Launching local CodeX...</span>`);
+    writeLine(`<span class="py-hl">codex</span> <span class="comment">— if installed, run in your terminal:</span> <span class="string">codex</span>`);
+    window.open('codex://', '_self');
   },
-  contact() {
-    writeLine(`📨 <span class="string">root@luyii.cn</span>  →  <span class="py-hl">github.com/luyii-code-1</span>`);
-  }
+
+  /* AI commands */
+  '/ai'(val) {
+    if (!val) { writeLine(`<span class="comment">Usage:</span> <span class="py-hl">/ai &lt;your question&gt;</span>`); return; }
+    if (!apiToken) { writeLine(`<span class="comment">Set API token first:</span> <span class="py-hl">/token sk-...</span>`); return; }
+    aiActive = true;
+    aiChat(val);
+  },
+  '/token'(val) {
+    if (!val) {
+      writeLine(`<span class="comment">Usage:</span> <span class="py-hl">/token sk-your-openai-key</span>`);
+      writeLine(`<span class="comment">Supports OpenAI / compatible APIs. Stored in localStorage only.</span>`);
+      if (apiToken) writeLine(`<span class="comment">Current token:</span> ${apiToken.slice(0,12)}...`);
+      return;
+    }
+    apiToken = val;
+    try { localStorage.setItem('luyii_api_token', apiToken); } catch(e) {}
+    writeLine(`<span class="py-hl">Token saved</span> <span class="comment">(in localStorage). Now try</span> <span class="py-hl">/ai hello</span>`);
+  },
+  '/new'() {
+    chatMessages = [];
+    saveState();
+    log.querySelectorAll('.ai-chat').forEach(el => el.remove());
+    writeLine(`<span class="py-hl">New conversation started.</span>`);
+  },
+  '/clean'() {
+    chatMessages = [];
+    apiToken = '';
+    saveState();
+    try { localStorage.removeItem('luyii_chat'); localStorage.removeItem('luyii_api_token'); } catch(e) {}
+    log.querySelectorAll('.ai-chat').forEach(el => el.remove());
+    writeLine(`<span class="py-hl">All chat history & token cleared.</span>`);
+  },
 };
 
 input.addEventListener('keydown', e => {
@@ -255,9 +432,7 @@ input.addEventListener('keydown', e => {
   const raw = input.value.trim();
   input.value = '';
 
-  // echo the prompt + command
   writeLine(`<span class="path">~/luyii</span> <span class="pmark">❯</span> ${raw}`);
-
   if (!raw) return;
 
   const [cmd, ...args] = raw.split(/\s+/);
@@ -270,8 +445,8 @@ input.addEventListener('keydown', e => {
   }
 });
 
-// refocus on click anywhere
 document.addEventListener('click', () => input.focus());
+renderChat(); // restore saved chat on load
 </script>
 </body>
 </html>
