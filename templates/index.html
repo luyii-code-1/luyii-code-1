@@ -4,40 +4,136 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="color-scheme" content="dark only">
-<meta name="theme-color" content="#151515">
+<meta name="theme-color" content="#0d1117">
 <title>{{ config.title }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root { color-scheme: dark only; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    background: #151515;
-    color: #e0e0e0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #0d1117;
+    color: #c9d1d9;
+    font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", Consolas, monospace;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     min-height: 100vh; padding: 2rem;
   }
-  main { max-width: 600px; width: 100%; text-align: center; }
-  h1 { font-size: 2rem; font-weight: 600; margin-bottom: 1rem; }
-  p { color: #888; line-height: 1.7; margin-bottom: 1.5rem; font-size: 1.05rem; }
-  .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
-  .links a {
-    color: #e0e0e0; text-decoration: none;
-    background: #222; padding: 0.5rem 1rem; border-radius: 6px;
-    font-size: 0.9rem; transition: background 0.2s;
+  /* ── Terminal window ── */
+  .terminal {
+    max-width: 640px; width: 100%;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
   }
-  .links a:hover { background: #333; }
-  footer { margin-top: 3rem; color: #555; font-size: 0.85rem; }
+  .terminal-bar {
+    display: flex; align-items: center; gap: 6px;
+    padding: 12px 16px;
+    background: #21262d;
+    border-bottom: 1px solid #30363d;
+  }
+  .terminal-bar span {
+    width: 12px; height: 12px; border-radius: 50%;
+  }
+  .t-red   { background: #ff5f56; }
+  .t-yellow{ background: #ffbd2e; }
+  .t-green { background: #27c93f; }
+  .terminal-bar .title {
+    flex: 1; text-align: center;
+    color: #8b949e; font-size: 0.75rem; margin-right: 36px;
+  }
+  .terminal-body { padding: 28px 24px 24px; }
+
+  /* ── Prompt line ── */
+  .prompt { color: #7ee787; margin-bottom: 1rem; font-size: 0.85rem; }
+  .prompt .path { color: #58a6ff; }
+  .prompt .cursor {
+    display: inline-block; width: 8px; height: 1rem;
+    background: #c9d1d9; animation: blink 1s step-end infinite; vertical-align: text-bottom;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* ── Output ── */
+  .output { margin-bottom: 1.5rem; }
+  .output .comment { color: #8b949e; }
+  .output .keyword { color: #ff7b72; }
+  .output .string { color: #a5d6ff; }
+  .output .func { color: #d2a8ff; }
+
+  h1 { font-size: 1.25rem; font-weight: 600; color: #f0f6fc; margin-bottom: 0.75rem; }
+  p  { color: #8b949e; line-height: 1.7; font-size: 0.85rem; }
+  p .hl { color: #7ee787; }
+
+  /* ── Tech Stack ── */
+  .section-label { color: #8b949e; font-size: 0.75rem; margin: 1.5rem 0 0.75rem; }
+  .section-label::before { content: "## "; color: #30363d; }
+  .tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+  .tech-tags span {
+    color: #7ee787;
+    background: rgba(126,231,135,0.08);
+    border: 1px solid rgba(126,231,135,0.2);
+    padding: 0.3rem 0.6rem; border-radius: 4px;
+    font-size: 0.78rem;
+  }
+
+  /* ── Links ── */
+  .links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .links a {
+    color: #58a6ff; text-decoration: none;
+    font-size: 0.8rem;
+  }
+  .links a::before { content: "→ "; color: #ff7b72; }
+  .links a:hover { color: #79c0ff; text-decoration: underline; }
+
+  /* ── Footer ── */
+  footer { margin-top: 2rem; color: #21262d; font-size: 0.75rem; }
 </style>
 </head>
 <body>
-  <main>
-    <h1>{{ section.title }}</h1>
-    <p>{{ section.content | safe }}</p>
-    <div class="links">
-      <a href="mailto:{{ config.extra.email }}">Email</a>
-      <a href="https://github.com/luyii-code-1">GitHub</a>
+  <div class="terminal">
+    <div class="terminal-bar">
+      <span class="t-red"></span><span class="t-yellow"></span><span class="t-green"></span>
+      <span class="title">~/luyii — zsh</span>
     </div>
-  </main>
-  <footer>&copy; {{ now() | date(format="%Y") }} {{ config.extra.author }}</footer>
+    <div class="terminal-body">
+      <div class="prompt">
+        <span class="path">~</span> $
+        <span class="cursor"></span>
+      </div>
+      <div class="output">
+        <h1>
+          <span class="comment">##</span> {{ section.title }}
+        </h1>
+        <p>
+          <span class="keyword">const</span> <span class="func">about</span> = {
+        </p>
+        <p>&nbsp;&nbsp;name: <span class="string">"luyii"</span>,</p>
+        <p>&nbsp;&nbsp;aka: <span class="string">"luyii-code-1"</span>,</p>
+        <p>&nbsp;&nbsp;role: <span class="string">"Vibe Engineer"</span>,</p>
+        <p>&nbsp;&nbsp;passion: <span class="string">"open-source"</span>,</p>
+        <p>&nbsp;&nbsp;stack: [</p>
+      </div>
+
+      <div class="tech-tags">
+        <span>Python</span><span>HTML5</span><span>JavaScript</span><span>Node.js</span><span>Vue</span>
+        <span>ESP32</span><span>Claude Code</span><span>CodeX</span><span>DeepSeek</span><span>GPT 5.5</span>
+      </div>
+
+      <div class="output">
+        <p>&nbsp;&nbsp;],</p>
+        <p>&nbsp;&nbsp;bio: <span class="string">"I build things that work, from web tools to ESP32 gadgets."</span></p>
+        <p>};</p>
+        <p><span class="comment">// Open to chat — reach out anytime</span></p>
+      </div>
+
+      <div class="links">
+        <a href="mailto:{{ config.extra.email }}">root@luyii.cn</a>
+        <a href="https://github.com/luyii-code-1">github/luyii-code-1</a>
+      </div>
+    </div>
+  </div>
+  <footer><span class="comment"># EOF — &copy; {{ now() | date(format="%Y") }} luyii</span></footer>
 </body>
 </html>
