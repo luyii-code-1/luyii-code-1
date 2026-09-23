@@ -2,7 +2,7 @@
 
 I'm **luyii** (aka luyii-code-1) — a Vibe Engineer, passionate about open-source.
 
-I write Python by hand, work with CodeX & Claude Code, and use DeepSeek & GPT 5.5 daily. I enjoy building things that actually work, from web tools to ESP32 gadgets. Open to chat about tech, open source, or whatever you're hacking on.
+I write Python by hand, work with CodeX & Claude Code, and use DeepSeek & GPT 5.6 Sol & DeepSeek V4.1 Flash & Gemini 3.6 Flash daily. I enjoy building things that actually work, from web tools to ESP32 gadgets. Open to chat about tech, open source, or whatever you're hacking on.
 
 <h3 align="center">🛠 Tech Stack</h3>
 <p align="center">
