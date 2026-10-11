@@ -7,7 +7,7 @@ I write Python by hand, work with CodeX & Claude Code, and use DeepSeek & GPT 5.
 <h3 align="center">🛠 Tech Stack</h3>
 <p align="center">
 	<img alt="Claude Code" src="https://img.shields.io/badge/Claude_Code-D97706?logo=claude&logoColor=fff&style=flat-square" />
-	<img alt="CodeX" src="https://img.shields.io/badge/CodeX-000?logo=openai&logoColor=fff&style=flat-square" />
+	<img alt="Codex" src="https://img.shields.io/badge/Codex-000?logo=openai&logoColor=fff&style=flat-square" />
 	<img alt="DeepSeek" src="https://img.shields.io/badge/DeepSeek-4F6BED?logo=deepseek&logoColor=fff&style=flat-square" />
 	<img alt="MiniMax" src="https://img.shields.io/badge/MiniMax-7B3FF2?logo=minimax&logoColor=fff&style=flat-square" />
 	<img alt="Qwen" src="https://img.shields.io/badge/Qwen-615FFF?logo=qwen&logoColor=fff&style=flat-square" />
